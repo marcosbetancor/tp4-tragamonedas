@@ -6,6 +6,15 @@ import org.junit.Test;
 
 public class TragamonedasTest {
 
+
+	@Test
+	public void PosicionDeTamboresEntre1y10() {
+		
+		RandomNumberGenerator posicion = new RandomNumberGenerator();
+		int esperado = posicion.generate();
+		assertTrue(esperado >= 1 && esperado <= 10);
+	}
+	
 	@Test
 	public void comprobarQueLosTamboresEstenEnUnoAntesDeActivar(){
 		
@@ -35,6 +44,10 @@ public class TragamonedasTest {
 			System.out.println("Que lastima! Mejor suerte la próxima.");
 			
 		}
+		assertEquals(tragamonedas.Tambor1.getPosicion(),tragamonedas.Tambor2.getPosicion(), 0.01);
+		assertEquals(tragamonedas.Tambor2.getPosicion(), tragamonedas.Tambor3.getPosicion() , 0.01);
+	
+	
 	}
 	
 }
